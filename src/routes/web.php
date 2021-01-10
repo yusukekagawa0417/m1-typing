@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// TOP
 Route::get('/', function () {
-    return view('welcome');
+    return view('top.index');
+});
+
+// タイピング
+Route::get('/typing', function () {
+    return view('typing.index');
 });
