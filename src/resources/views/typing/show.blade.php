@@ -13,5 +13,4 @@
     <script type="text/javascript">
         const words = JSON.parse('<?php echo $jsonArray ?>');
     </script>
-    <script src="{{ asset('js/main.js') }}"></script>
 @endsection
