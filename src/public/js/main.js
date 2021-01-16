@@ -2,21 +2,19 @@
 
 {
   function setWord() {
-    word = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+    wordTmp = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+    word = wordTmp['target'];
     target.textContent = word;
+    kana.textContent = wordTmp['kana'];;
     loc = 0;
   }
-
-  const words = [
-    'anmikadoragonsinnokubonisyutugenn',
-    'hitexiniki',
-    'maaorehaogigayaritaitoomotterukotohanarubekuyarasiteyaritaitomotterukarana',
-  ];
+  let wordTmp;
   let word;
   let loc = 0;
   let startTime;
   let isPlaying = false;
   const target = document.getElementById('target');
+  const kana = document.getElementById('kana');
 
   document.addEventListener('click', () => {
     if (isPlaying === true) {
@@ -42,6 +40,8 @@
         const elapsedTime = ((Date.now() - startTime) / 1000).toFixed(2);
         const result = document.getElementById('result');
         result.textContent = `Finished! ${elapsedTime} seconds!`;
+        const button = document.getElementById('button');
+        button.innerHTML = `<a href="/result/create?time=${elapsedTime}">順位は!?</a>`
         return;
       }
 
