@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 // タイピング
-Route::get('/typing', function () {
-    return view('typing.index');
-});
+Route::resource('typing', 'TypingController', ['only' => ['show']]);
+
+// 結果
+Route::resource('result', 'ResultController', ['only' => ['index', 'create', 'store']]);
