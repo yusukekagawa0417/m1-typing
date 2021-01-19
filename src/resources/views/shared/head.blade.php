@@ -6,4 +6,5 @@
 
     <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('image/favicon.ico') }}">
 </head>
