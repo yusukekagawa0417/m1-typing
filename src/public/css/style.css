@@ -72,23 +72,6 @@ button.btn {
   border-radius: 0.5rem;
 }
 
-/* TOP */
-.top-title {
-  font-family: NikkyouSans-B6aV;
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
-}
-
-.top-title-link {
-  color: white;
-  text-decoration: none;
-}
-
-.top-description {
-  font-size: 1.6rem;
-}
-
 a.btn-solid-gold {
   color: #b1921b;
   border-right: 4px solid #cea82c;
@@ -109,15 +92,46 @@ a.btn-solid-gold:hover {
   border-left: 4px solid #ffed8b;
 }
 
-/* question */
-.question-title {
+/* TOP */
+.top-title {
+  font-family: NikkyouSans-B6aV;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
+}
+
+.top-title-link {
+  color: white;
+  text-decoration: none;
+}
+
+.top-description {
+  font-size: 1.6rem;
+}
+
+/* typing */
+.typing-title {
   font-family: NikkyouSans-B6aV;
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px orange, 0 0 70px orange, 0 0 80px orange, 0 0 100px orange, 0 0 150px orange;
 }
 
-.question-content {
+#target {
+	font-size: 48px;
+	letter-spacing: .1em;
+}
+
+#kana {
+  font-size: 30px;
+  letter-spacing: .1em;
+}
+
+#result {
+  font-size: 24px;
+}
+
+.typing-result {
   position: relative;
   display: inline-block;
   margin: 1.5em 0;
@@ -127,7 +141,7 @@ a.btn-solid-gold:hover {
   background: #eba404;
 }
 
-.question-content:before {
+.typing-result:before {
 	content: "";
   position: absolute;
   top: 100%;
@@ -135,26 +149,6 @@ a.btn-solid-gold:hover {
   margin-left: -15px;
   border: 15px solid transparent;
   border-top: 15px solid #eba404;
-}
-
-a.btn-border {
-  color: white;
-  border: 2px solid white;
-  border-radius: 0;
-  background: black;
-  width: 35%;
-  padding: 1rem;
-  margin: 1rem;
-}
-
-a.btn-yes:hover {
-  color: white;
-  background: repeating-linear-gradient(0deg, #B67B03 0.1em, #DAAF08 0.2em, #FEE9A0 0.3em, #DAAF08 0.4em, #B67B03 0.5em); 
-}
-
-a.btn-no:hover {
-  color: white;
-  background: repeating-linear-gradient(0deg, #757575 0.1em, #9E9E9E 0.2em, #E8E8E8 0.3em, #9E9E9E 0.4em, #757575 0.5em); 
 }
 
 /* result */
@@ -244,9 +238,4 @@ footer {
   font-size: 1.2rem;
   line-height: 2.4rem;
   text-align: left;
-}
-
-#target {
-	font-size: 48px;
-	letter-spacing: .1em;
 }
