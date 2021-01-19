@@ -40,7 +40,7 @@
         const elapsedTime = ((Date.now() - startTime) / 1000).toFixed(2);
         const result = document.getElementById('result');
         result.textContent = `Finished! ${elapsedTime} seconds!`;
-        result.classList.add('typing-result');
+        result.classList.add('speech-bubble');
         const button = document.getElementById('button');
         button.innerHTML = `<a href="/result/create?time=${elapsedTime}" class="btn btn-solid-gold">順位は!?</a>`
         return;

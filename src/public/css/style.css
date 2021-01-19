@@ -92,6 +92,26 @@ a.btn-solid-gold:hover {
   border-left: 4px solid #ffed8b;
 }
 
+.speech-bubble {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 17px 10px;
+  width: 80%;
+  font-size: 16px;
+  background: #eba404;
+}
+
+.speech-bubble:before {
+	content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #eba404;
+}
+
 /* TOP */
 .top-title {
   font-family: NikkyouSans-B6aV;
@@ -129,26 +149,6 @@ a.btn-solid-gold:hover {
 
 #result {
   font-size: 24px;
-}
-
-.typing-result {
-  position: relative;
-  display: inline-block;
-  margin: 1.5em 0;
-  padding: 17px 10px;
-  width: 80%;
-  font-size: 16px;
-  background: #eba404;
-}
-
-.typing-result:before {
-	content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -15px;
-  border: 15px solid transparent;
-  border-top: 15px solid #eba404;
 }
 
 /* result */
@@ -201,13 +201,6 @@ a.btn-solid-gold:hover {
 .result-color-yellow {
   background-color: #FFCC00;
   color: #CC6600;
-}
-
-.result-description {
-  width: 80%;
-  margin: 0 auto;
-  font-size: 1.4rem;
-  text-align: left;
 }
 
 .result-twitter {
