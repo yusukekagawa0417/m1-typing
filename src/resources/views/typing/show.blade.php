@@ -6,7 +6,7 @@
             <h1 class="typing-title">T Y P I N G</h1>
         </div>
         <p id="kana"></p>
-        <p id="target">はじめる</p>
+        <p id="target">クリック！</p>
         <p id="result"></p>
         <div id="button"></div>
     </div>
