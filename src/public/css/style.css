@@ -196,6 +196,19 @@ table td {
   text-align: center;
 }
 
+input {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-submit {
+  border: none;
+  padding: 3px 10px;
+  background-color: #eba404;
+  color: #fff;
+  cursor: pointer;
+}
+
 .result-return-top {
   margin-top: 50px;
 }

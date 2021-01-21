@@ -73,15 +73,14 @@
             </div>
         </div>
         <div class="box">
-            <p>順位を保存しますか？</p>
+            <p class="speech-bubble">順位を保存しますか？</p>
             <form method="POST" action="{{ route('result.store') }}">
                 {{ csrf_field() }}
                 <input id="name"
-                       class="name"
                        value="{{ old('name') }}"
                        placeholder="あなたの名前"
                        required>
-                <button tyoe="submit">保存</button>
+                <button type="submit" class="input-submit">保存</button>
             </form>
         </div>
         <div class="result-return-top">
