@@ -159,48 +159,36 @@ a.btn-solid-gold:hover {
   text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px fuchsia, 0 0 70px fuchsia, 0 0 80px fuchsia, 0 0 100px fuchsia, 0 0 150px fuchsia;
 }
 
-.result-name-outer {
-  text-align: center;
-  animation: rotate-anime 7s linear infinite;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@keyframes rotate-anime {
-  0%  {transform: rotateY(0);}
-  100%  {transform: rotateY(360deg);}
+.result-description {
+  font-size: 16px;
 }
 
-.result-name-inner1 {
-  width: 80px;
+table td {
+  padding: .5rem;
 }
 
-.result-name-inner2 {
-  font-family: NikkyouSans-B6aV;
-
-  writing-mode: vertical-rl;
-  border-top: 4px solid #cea82c;
-  border-right: 4px solid #b1921b;
-  border-bottom: 4px solid #987c1e;
-  border-left: 4px solid #ffed8b;
-  padding: 1rem;
-  font-size: 2rem;
-  text-shadow: 1px 1px 0 white,-1px 1px 0 white,1px -1px 0 white,-1px -1px 0 white;
+.table-top {
+  width: 80%;
+  margin: 0 auto;
 }
 
-.result-color-red {
-  background-color: red;
+.table-top td {
+  background-color: yellow;
   color: red;
 }
 
-.result-color-blue {
-  background-color: blue;
+.table-sub {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.table-sub td {
+  background-color: white;
   color: blue;
 }
 
-.result-color-yellow {
-  background-color: #FFCC00;
-  color: #CC6600;
+.table-name {
+  color: yellow;
 }
 
 .result-twitter {
