@@ -2,9 +2,11 @@
 @section('title', "タイピング|" . config('app.name'))
 @section('content')
     <div class="container">
-        <h1>タイピングページ</h1>
+        <div class="box">  
+            <h1 class="typing-title">T Y P I N G</h1>
+        </div>
         <p id="kana"></p>
-        <p id="target">Click to start!</p>
+        <p id="target">クリック！</p>
         <p id="result"></p>
         <div id="button"></div>
     </div>

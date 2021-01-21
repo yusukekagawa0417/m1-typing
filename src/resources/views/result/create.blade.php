@@ -2,24 +2,89 @@
 @section('title', "結果登録|" . config('app.name'))
 @section('content')
     <div class="container">
-        <h1>結果登録ページ</h1>
-        <div>
-            <p>1位：笑い飯[2.3秒]</p>
-            <p>2位：あなた[5.9秒]</p>
-            <p>3位：パンクブーブー[10.2秒]</p>
+        <div class="box">
+            <h1 class="result-title">J　U　D　G　E</h1>
         </div>
-        <p>あなたは2位でした！</p>
-        <div>twitter共有</div>
-        <p>順位を保存しますか？</p>
-        <form method="POST" action="{{ route('result.store') }}">
-            {{ csrf_field() }}
-            <label id="name">名前</label>
-            <input id="name"
-                   class="name"
-                   value="{{ old('name') }}"
-                   required>
-            <button tyoe="submit">保存</button>
-        </form>
-        <a href="/">保存せずに再チャレンジ</a>
+        <div class="box">
+            <p class="result-description">あなたは2位でした！</p>
+            <table class="table-top">
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>笑い飯</td>
+                        <td>2.3秒</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ブッフェ</td>
+                        <td>5.9秒</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>パンクブーブー</td>
+                        <td>10.2秒</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table-sub">
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td>笑い飯</td>
+                        <td>2.3秒</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>ブッフェ</td>
+                        <td>5.9秒</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>パンクブーブー</td>
+                        <td>10.2秒</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>笑い飯</td>
+                        <td>2.3秒</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>ブッフェ</td>
+                        <td>5.9秒</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>パンクブーブー</td>
+                        <td>10.2秒</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>パンクブーブー</td>
+                        <td>10.2秒</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box">
+            <div class="result-twitter">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text="結果｜{{ config('app.name') }}" data-url="https://google.co.jp">Tweet</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+        <div class="box">
+            <p class="speech-bubble">順位を保存しますか？</p>
+            <form method="POST" action="{{ route('result.store') }}">
+                {{ csrf_field() }}
+                <input id="name"
+                       value="{{ old('name') }}"
+                       placeholder="あなたの名前"
+                       required>
+                <button type="submit" class="input-submit">保存</button>
+            </form>
+        </div>
+        <div class="result-return-top">
+            <a href="{{ url('/') }}" class="btn btn-solid-gold">◀︎ 再挑戦</a>
+        </div>
     </div>
 @endsection

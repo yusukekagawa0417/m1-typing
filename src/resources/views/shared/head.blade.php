@@ -3,5 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ __('messages.app_description') }}">
     <title>@yield('title', config('app.name'))</title>
+
+    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('image/favicon.ico') }}">
 </head>
