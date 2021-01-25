@@ -139,12 +139,14 @@ a.btn-solid-gold:hover {
 
 #target {
 	font-size: 48px;
-	letter-spacing: .1em;
+  letter-spacing: .1em;
+  font-family: NikkyouSans-B6aV;
 }
 
 #kana {
   font-size: 30px;
   letter-spacing: .1em;
+  font-family: NikkyouSans-B6aV;
 }
 
 #result {
@@ -161,6 +163,10 @@ a.btn-solid-gold:hover {
 
 .result-description {
   font-size: 16px;
+}
+
+table {
+  font-family: NikkyouSans-B6aV;
 }
 
 table td {
