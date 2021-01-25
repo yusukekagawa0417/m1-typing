@@ -10,58 +10,58 @@
             <table class="table-top">
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>笑い飯</td>
-                        <td>2.3秒</td>
+                        <td bgcolor="yellow">1</td>
+                        <td><font color="orange">笑い飯</font></td>
+                        <td bgcolor="yellow">2.3秒</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>ブッフェ</td>
-                        <td>5.9秒</td>
+                        <td bgcolor="yellow">2</td>
+                        <td><font color="orange">ブッフェ</font></td>
+                        <td bgcolor="yellow">5.9秒</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>パンクブーブー</td>
-                        <td>10.2秒</td>
+                        <td bgcolor="yellow">3</td>
+                        <td><font color="orange">パンクブーブー</font></td>
+                        <td bgcolor="yellow">10.2秒</td>
                     </tr>
                 </tbody>
             </table>
             <table class="table-sub">
                 <tbody>
                     <tr>
-                        <td>4</td>
-                        <td>笑い飯</td>
-                        <td>2.3秒</td>
+                        <td bgcolor="white">4</td>
+                        <td><font color="orange">笑い飯</font></td>
+                        <td bgcolor="white">2.3秒</td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td>ブッフェ</td>
-                        <td>5.9秒</td>
+                        <td bgcolor="white">5</td>
+                        <td><font color="orange">ブッフェ</font></td>
+                        <td bgcolor="white">5.9秒</td>
                     </tr>
                     <tr>
-                        <td>6</td>
-                        <td>パンクブーブー</td>
-                        <td>10.2秒</td>
+                        <td bgcolor="white">6</td>
+                        <td><font color="orange">パンクブーブー</font></td>
+                        <td bgcolor="white">10.2秒</td>
                     </tr>
                     <tr>
-                        <td>7</td>
-                        <td>笑い飯</td>
-                        <td>2.3秒</td>
+                        <td bgcolor="white">7</td>
+                        <td><font color="orange">笑い飯</font></td>
+                        <td bgcolor="white">2.3秒</td>
                     </tr>
                     <tr>
-                        <td>8</td>
-                        <td>ブッフェ</td>
-                        <td>5.9秒</td>
+                        <td bgcolor="white">8</td>
+                        <td><font color="orange">ブッフェ</font></td>
+                        <td bgcolor="white">5.9秒</td>
                     </tr>
                     <tr>
-                        <td>9</td>
-                        <td>パンクブーブー</td>
-                        <td>10.2秒</td>
+                        <td bgcolor="white">9</td>
+                        <td><font color="orange">パンクブーブー</font></td>
+                        <td bgcolor="white">10.2秒</td>
                     </tr>
                     <tr>
-                        <td>10</td>
-                        <td>パンクブーブー</td>
-                        <td>10.2秒</td>
+                        <td bgcolor="white">10</td>
+                        <td><font color="orange">パンクブーブー</font></td>
+                        <td bgcolor="white">10.2秒</td>
                     </tr>
                 </tbody>
             </table>
