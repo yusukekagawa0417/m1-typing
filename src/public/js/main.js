@@ -8,6 +8,7 @@
     kana.textContent = wordTmp['kana'];;
     loc = 0;
   }
+
   let wordTmp;
   let word;
   let loc = 0;
@@ -22,10 +23,10 @@
       return;
     }
     isPlaying = true;
-    music.play();
-    music.loop = true;
     startTime = Date.now();
     setWord();
+    music.play();
+    music.loop = true;
   });
 
   document.addEventListener('keydown', e => {
