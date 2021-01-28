@@ -126,7 +126,7 @@ a.btn-solid-gold:hover {
 }
 
 .top-description {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 /* typing */
@@ -139,12 +139,14 @@ a.btn-solid-gold:hover {
 
 #target {
 	font-size: 48px;
-	letter-spacing: .1em;
+  letter-spacing: .1em;
+  font-family: NikkyouSans-B6aV;
 }
 
 #kana {
   font-size: 30px;
   letter-spacing: .1em;
+  font-family: NikkyouSans-B6aV;
 }
 
 #result {
@@ -163,8 +165,13 @@ a.btn-solid-gold:hover {
   font-size: 16px;
 }
 
+table {
+  font-family: NikkyouSans-B6aV;
+}
+
 table td {
   padding: .5rem;
+  border: 2px solid white;
 }
 
 .table-top {
@@ -173,7 +180,6 @@ table td {
 }
 
 .table-top td {
-  background-color: yellow;
   color: red;
 }
 
@@ -183,7 +189,6 @@ table td {
 }
 
 .table-sub td {
-  background-color: white;
   color: blue;
 }
 

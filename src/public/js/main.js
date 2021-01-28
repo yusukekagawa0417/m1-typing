@@ -39,7 +39,7 @@
       if (words.length === 0) {
         const elapsedTime = ((Date.now() - startTime) / 1000).toFixed(2);
         const result = document.getElementById('result');
-        result.textContent = `Finished! ${elapsedTime} seconds!`;
+        result.textContent = `終了です！あなたの成績は${elapsedTime}秒！`;
         result.classList.add('speech-bubble');
         const button = document.getElementById('button');
         button.innerHTML = `<a href="/result/create?time=${elapsedTime}" class="btn btn-solid-gold">順位は!?</a>`
