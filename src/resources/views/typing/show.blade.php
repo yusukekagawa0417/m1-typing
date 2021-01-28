@@ -6,7 +6,10 @@
             <h1 class="typing-title">T Y P I N G</h1>
         </div>
         <p id="kana"></p>
-        <p id="target">クリック！</p>
+        <p id="target">
+            クリック！<br>
+            <span class="text-small">※音が出ます</span>
+        </p>
         <p id="result"></p>
         <div id="button"></div>
     </div>
