@@ -23,3 +23,13 @@ Route::resource('typing', 'TypingController', ['only' => ['show']]);
 
 // 結果
 Route::resource('result', 'ResultController', ['only' => ['index', 'create', 'store']]);
+
+// お問い合わせ
+Route::get('/contact', function () {
+    return view('contact.index');
+});
+
+// プライバシーポリシー
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy.index');
+});

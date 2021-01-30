@@ -3,11 +3,7 @@
 @section('content')
     <div class="container">
         <div class="box">
-            <h1 class="top-title">
-                <a class="top-title-link" href="{{ url('/') }}">
-                    {{ config('app.name') }}
-                </a>
-            </h1>
+            @include('shared.top-title')
         </div>
         <div class="box">
             <h2 class="top-description">
