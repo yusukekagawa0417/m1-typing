@@ -147,6 +147,7 @@ a.btn-solid-gold:hover {
   font-size: 48px;
   letter-spacing: .1em;
   font-family: NikkyouSans-B6aV;
+  word-wrap: break-word;
 }
 
 .text-small {
