@@ -17,6 +17,9 @@ class TypingController extends Controller
     public function show ($id)
     {
         $file = new \SplFileObject("word${id}.csv");
+        if (!$file) {
+            abort(Response::HTTP_NOT_FOUND);
+        }
         $file->setFlags(
             \SplFileObject::READ_CSV |
             \SplFileObject::READ_AHEAD |
