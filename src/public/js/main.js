@@ -46,7 +46,11 @@
         result.textContent = `終了です！あなたの成績は${elapsedTime}秒！`;
         result.classList.add('speech-bubble');
         const button = document.getElementById('button');
-        button.innerHTML = `<a href="/result/create?time=${elapsedTime}" class="btn btn-solid-gold">順位は!?</a>`
+        button.innerHTML = `<input id="time"
+                                   name="time"
+                                   value="${elapsedTime}"
+                                   type="hidden">
+                            <button type="submit" class="btn">順位は!?</button>`
         return;
       }
 

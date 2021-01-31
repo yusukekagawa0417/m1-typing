@@ -11,7 +11,10 @@
             <span class="text-small">※音が出ます</span>
         </p>
         <p id="result"></p>
-        <div id="button"></div>
+        <form method="POST" action="{{ route('result.edit', ['result' => $id]) }}">
+            {{ csrf_field() }}
+            <div id="button"></div>
+        </form>
     </div>
 
     <?php $jsonArray = json_encode($data); ?>

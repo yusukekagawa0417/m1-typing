@@ -2,40 +2,112 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Result\EditResultRequest;
+use App\Http\Requests\Result\UpdateResultRequest;
+use App\Models\Result;
+use Exception;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\Response;
 
 class ResultController extends Controller
 {
     /**
-     * 結果一覧
+     * ランキング詳細（難易度別）
      * 
+     * @param $id
      * @return Factory|View
      */
-    public function index ()
+    public function show ($id)
     {
-        return view('result.index');
+        $result_object = DB::table('results')->where('type', $id)->get();
+        if (!$result_object) {
+            abort(Response::HTTP_NOT_FOUND);
+        }
+        foreach ($result_object as $r) {
+            $result[] = [
+                'name' => $r->name,
+                'time' => $r->time,
+            ];
+        }
+        // 時間順に並び替え
+        foreach ($result as $key => $value) {
+            $standard_key_array[$key] = $value['time'];
+        }
+        array_multisort($standard_key_array, SORT_ASC, $result);
+        return view('result.show', compact('result'));
     }
 
     /**
-     * 結果作成
+     * ランキング編集（難易度別）（createに変えた方が良いかも）
      * 
+     * @param EditResultRequest $request
+     * @param $id
      * @return Factory|View
      */
-    public function create (Request $request)
+    public function edit (EditResultRequest $request, $id)
     {
+        // 現在のユーザーのデータ
+        $data = $request->validated();
+        $time = $data['time'];
+        $yours = [
+            'name' => 'あなた',
+            'time' => $time,
+        ];
 
-        return view('result.create');
+        // DBに保存された過去のユーザーのデータ
+        $result = [];
+        $result_object = DB::table('results')->where('type', $id)->get();
+        foreach ($result_object as $r) {
+            $result[] = [
+                'name' => $r->name,
+                'time' => $r->time,
+            ];
+        }
+
+        // 上記2種類を合わせる
+        array_push($result, $yours);
+
+        // 時間順に並び替え
+        foreach ($result as $key => $value) {
+            $standard_key_array[$key] = $value['time'];
+        }
+        array_multisort($standard_key_array, SORT_ASC, $result);
+
+        // 現在のユーザーのデータが何位か確認
+        foreach ($result as $key => $value) {
+            if ($value['name'] === 'あなた') {
+                $number = $key + 1;
+            }
+        }
+        if ($number > 10) {
+            $number = "";
+        }
+  
+        return view('result.edit', compact('result', 'time', 'number', 'id'));
     }
 
     /**
-     * 結果保存
+     * ランキング更新（難易度別）（storeに変えた方が良いかも）
      * 
+     * @param UpdateResultRequest $request
+     * @param $id
+     * @return RedirectResponse|Redirector
+     * @throws Exception
      */
-    public function store (Request $request)
-    {
-        return redirect(route('result.index'));
+    public function update (UpdateResultRequest $request, $id)
+    { 
+        $data = $request->validated();
+        $result = new Result();
+        $result->name = $data['name'];
+        $result->time = $data['time'];
+        $result->type = $id;
+        $result->save();
+
+        return redirect(route('result.show', ['result' => $id]));
     }
 }

@@ -22,7 +22,8 @@ Route::get('/', function () {
 Route::resource('typing', 'TypingController', ['only' => ['show']]);
 
 // 結果
-Route::resource('result', 'ResultController', ['only' => ['index', 'create', 'store']]);
+Route::resource('result', 'ResultController', ['only' => ['show', 'update']]);
+Route::post('/result/{result}/edit', 'ResultController@edit')->name('result.edit');
 
 // お問い合わせ
 Route::get('/contact', function () {

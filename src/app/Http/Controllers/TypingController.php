@@ -11,7 +11,7 @@ class TypingController extends Controller
     /**
      * タイピング詳細（難易度別）
      * 
-     * @param string $id
+     * @param $id
      * @return Factory|View
      */
     public function show ($id)
@@ -37,6 +37,8 @@ class TypingController extends Controller
         if (!$data) {
             abort(Response::HTTP_NOT_FOUND);
         }
-        return view('typing.show', compact('data'));
+        shuffle($data);
+        $data = array_slice($data , 0, 5);
+        return view('typing.show', compact('data', 'id'));
     }
 }
