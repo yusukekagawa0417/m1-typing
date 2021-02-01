@@ -14,9 +14,10 @@
   let loc = 0;
   let startTime;
   let isPlaying = false;
+  const mode = location.pathname.slice(-1);;
+  const music = mode === "1" ? new Audio('/image/bgm_easy.mp3') : new Audio('/image/bgm_hard.mp3');
   const target = document.getElementById('target');
   const kana = document.getElementById('kana');
-  const music = new Audio('/image/bgm_easy.mp3');
 
   document.addEventListener('click', () => {
     if (isPlaying === true) {
