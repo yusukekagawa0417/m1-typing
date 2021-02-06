@@ -49,11 +49,10 @@
                        name="name"
                        value="{{ old('name') }}"
                        placeholder="あなたの名前"
-                       required>
-                <input id="time"
-                       name="time"
-                       value="{{ $time }}"
-                       type="hidden">
+                       maxlength="10"
+                       type="text"
+                       required
+                       style="width: 200px;">
                 <button type="submit" class="input-submit">保存</button>
             </form>
         </div>

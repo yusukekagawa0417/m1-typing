@@ -11,6 +11,7 @@
             <span class="text-small">※音が出ます</span>
         </p>
         <p id="result"></p>
+        {{-- ajaxとかでやった方が良いのかも --}}
         <form method="POST" action="{{ route('result.edit', ['result' => $id]) }}">
             {{ csrf_field() }}
             <div id="button"></div>
