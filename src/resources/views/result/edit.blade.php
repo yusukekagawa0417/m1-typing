@@ -35,7 +35,27 @@
         </div>
         <div class="box">
             <div class="result-twitter">
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text="結果｜{{ config('app.name') }}" data-url="https://google.co.jp">Tweet</a>
+                @if (empty($number))
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                        class="twitter-share-button"
+                        data-show-count="false"
+                        data-size="large"
+                        data-text="残念、あなたは準決勝敗退でした...｜{{ config('app.name') }}"
+                        data-hashtags="M1グ打ンプリ"
+                        data-url="https://www.m1-typing.com/">
+                            Tweet
+                    </a>
+                @else
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                        class="twitter-share-button"
+                        data-show-count="false"
+                        data-size="large"
+                        data-text="あなたは決勝進出、見事{{ $number }}位でした！｜{{ config('app.name') }}"
+                        data-hashtags="M1グ打ンプリ"
+                        data-url="https://www.m1-typing.com/">
+                            Tweet
+                    </a>
+                @endif
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>

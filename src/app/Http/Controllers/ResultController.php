@@ -39,7 +39,16 @@ class ResultController extends Controller
             $standard_key_array[$key] = $value['time'];
         }
         array_multisort($standard_key_array, SORT_ASC, $result);
-        return view('result.show', compact('result'));
+
+        // 順位取得
+        session_start();
+        foreach ($result as $key => $value) {
+            if ($value['time'] == $_SESSION['time']) {
+                $number = $key + 1;
+            }
+        }
+
+        return view('result.show', compact('result', 'number'));
     }
 
     /**
@@ -115,7 +124,6 @@ class ResultController extends Controller
         
         session_start();
         $result->time = $_SESSION['time'];
-        unset($_SESSION['time']);
         $_SESSION['isAgain'] = true;
 
         $result->type = $id;
