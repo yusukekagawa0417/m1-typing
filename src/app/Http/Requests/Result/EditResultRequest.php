@@ -16,6 +16,7 @@ class EditResultRequest extends FormRequest
         return true;
     }
 
+    // バリデーションで引っかかった際、routeが違うかなんかでエラーになる？？けどまあ、inputタグでバリデーションしてるのでOK
     public function rules()
     {
         return [
