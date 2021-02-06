@@ -142,6 +142,11 @@ a.btn-solid-gold:hover {
   text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px orange, 0 0 70px orange, 0 0 80px orange, 0 0 100px orange, 0 0 150px orange;
 }
 
+.click {
+  font-size: 48px;
+  font-family: NikkyouSans-B6aV;
+}
+
 #kana {
   font-size: 30px;
   letter-spacing: .1em;
@@ -157,6 +162,7 @@ a.btn-solid-gold:hover {
 
 .text-small {
   font-size: 20px;
+  font-family: NikkyouSans-B6aV;
 }
 
 #result {
