@@ -47,6 +47,7 @@ class ResultController extends Controller
                 $number = $key + 1;
             }
         }
+        $_SESSION['isAgain'] = true;
 
         return view('result.show', compact('result', 'number'));
     }
@@ -126,11 +127,16 @@ class ResultController extends Controller
      */
     public function update (UpdateResultRequest $request, $id)
     { 
+        // 記録の再登録防止
+        session_start();
+        if ($_SESSION['isAgain']) {
+            return redirect('/');
+        }
+
         $data = $request->validated();
         $result = new Result();
         $result->name = $data['name'];
         
-        session_start();
         $result->time = $_SESSION['time'];
         $_SESSION['isAgain'] = true;
 
