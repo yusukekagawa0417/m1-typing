@@ -51,6 +51,12 @@ class ResultController extends Controller
      */
     public function edit (EditResultRequest $request, $id)
     {
+        // 記録の再登録防止
+        session_start();
+        if ($_SESSION['isAgain']) {
+          return redirect('/');
+        }
+
         // 現在のユーザーのデータ
         $data = $request->validated();
         $time = $data['time'];
@@ -58,6 +64,8 @@ class ResultController extends Controller
             'name' => 'あなた',
             'time' => $time,
         ];
+
+        $_SESSION['time'] = $time;
 
         // DBに保存された過去のユーザーのデータ
         $result = [];
@@ -104,7 +112,12 @@ class ResultController extends Controller
         $data = $request->validated();
         $result = new Result();
         $result->name = $data['name'];
-        $result->time = $data['time'];
+        
+        session_start();
+        $result->time = $_SESSION['time'];
+        unset($_SESSION['time']);
+        $_SESSION['isAgain'] = true;
+
         $result->type = $id;
         $result->save();
 

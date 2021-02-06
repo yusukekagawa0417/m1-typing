@@ -39,6 +39,10 @@ class TypingController extends Controller
         }
         shuffle($data);
         $data = array_slice($data , 0, 5);
+
+        session_start();
+        $_SESSION['isAgain'] = false;
+
         return view('typing.show', compact('data', 'id'));
     }
 }
