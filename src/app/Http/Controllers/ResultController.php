@@ -63,7 +63,7 @@ class ResultController extends Controller
         // 記録の再登録防止
         session_start();
         if ($_SESSION['isAgain']) {
-          return redirect('/');
+            return redirect('/');
         }
 
         // 現在のユーザーのデータ
@@ -82,6 +82,7 @@ class ResultController extends Controller
         }
 
         $_SESSION['time'] = $time;
+        $_SESSION['isAgain'] = false;
 
         // DBに保存された過去のユーザーのデータ
         $result = [];

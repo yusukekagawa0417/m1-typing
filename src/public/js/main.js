@@ -19,7 +19,7 @@
   const target = document.getElementById('target');
   const kana = document.getElementById('kana');
 
-  document.addEventListener('click', () => {
+  document.getElementsByClassName('click')[0].addEventListener('click', () => {
     if (isPlaying === true) {
       return;
     }
