@@ -10,6 +10,11 @@
   src: url('/fonts/NikkyouSans-B6aV.ttf');
 }
 
+@font-face {
+	font-family: fontopoFONTOPO-Regular;
+  src: url('/fonts/fontopoFONTOPO-Regular.otf');
+}
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -140,13 +145,13 @@ a.btn-solid-gold:hover {
 #kana {
   font-size: 30px;
   letter-spacing: .1em;
-  font-family: NikkyouSans-B6aV;
+  font-family: fontopoFONTOPO-Regular;
 }
 
 #target {
   font-size: 48px;
   letter-spacing: .1em;
-  font-family: NikkyouSans-B6aV;
+  font-family: fontopoFONTOPO-Regular;
   word-wrap: break-word;
 }
 
