@@ -103,8 +103,8 @@ a.btn-solid-gold:hover {
   margin: 1.5em 0;
   padding: 17px 10px;
   width: 80%;
-  font-size: 16px;
-  background: #eba404;
+  font-size: 18px;
+  /* background: #eba404; */
 }
 
 .speech-bubble:before {
@@ -114,13 +114,13 @@ a.btn-solid-gold:hover {
   left: 50%;
   margin-left: -15px;
   border: 15px solid transparent;
-  border-top: 15px solid #eba404;
+  /* border-top: 15px solid #eba404; */
 }
 
 /* TOP */
 .top-title {
   font-family: NikkyouSans-B6aV;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: bold;
   text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px red, 0 0 150px red;
 }
@@ -178,7 +178,8 @@ a.btn-solid-gold:hover {
 }
 
 .result-description {
-  font-size: 16px;
+  font-size: 18px;
+  padding: 0px 10px 17px;
 }
 
 table {
