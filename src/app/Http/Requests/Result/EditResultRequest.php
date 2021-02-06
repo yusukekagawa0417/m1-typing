@@ -21,12 +21,14 @@ class EditResultRequest extends FormRequest
     {
         return [
             'time' => 'required',
+            'time2' => 'required',
         ];
     }
 
     public function attributes() {
         return [
             'time' => '時間',
+            'time2' => '時間2',
         ];
     }
 }

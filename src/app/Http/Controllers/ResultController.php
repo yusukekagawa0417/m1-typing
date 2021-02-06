@@ -74,6 +74,13 @@ class ResultController extends Controller
             'time' => $time,
         ];
 
+        // inputタグの値を書き換えられていないかチェック
+        // 暗号化ロジックが書かれてるので、githubリポジトリをprivateにするべき（今回のアプリでそこまでする必要はないが）
+        $time2 = $data['time2'];
+        if (($time + 37) * 791 !== floatval($time2)) {
+            return redirect('/');
+        }
+
         $_SESSION['time'] = $time;
 
         // DBに保存された過去のユーザーのデータ

@@ -47,10 +47,13 @@
         result.textContent = `終了です！あなたの成績は${elapsedTime}秒！`;
         result.classList.add('speech-bubble');
         const button = document.getElementById('button');
-        // TODO: 検証ツールで値変えられてしまうので対応が必要。ajax化で解決できる？
         button.innerHTML = `<input id="time"
                                    name="time"
                                    value="${elapsedTime}"
+                                   type="hidden">
+                            <input id="time2"
+                                   name="time2"
+                                   value="${(Number(elapsedTime) + 37) * 791}"
                                    type="hidden">
                             <button type="submit" class="btn">順位は!?</button>`
         return;
