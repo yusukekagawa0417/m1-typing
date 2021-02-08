@@ -42,7 +42,7 @@
                         data-size="large"
                         data-text="残念、あなたは準決勝敗退でした...｜{{ config('app.name') }}"
                         data-hashtags="M1グ打ンプリ"
-                        data-url="https://www.m1-typing.com/">
+                        data-url="https://m1-typing.com">
                             Tweet
                     </a>
                 @else
@@ -52,7 +52,7 @@
                         data-size="large"
                         data-text="あなたは決勝進出、見事{{ $number }}位でした！｜{{ config('app.name') }}"
                         data-hashtags="M1グ打ンプリ"
-                        data-url="https://www.m1-typing.com/">
+                        data-url="https://m1-typing.com">
                             Tweet
                     </a>
                 @endif
