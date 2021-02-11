@@ -10,6 +10,7 @@
             <span class="click">クリック！</span><br>
             <span class="text-small">※音が出ます</span>
         </p>
+        <p id="message"></p>
         <p id="result"></p>
         <form method="POST" action="{{ route('result.edit', ['result' => $id]) }}">
             {{ csrf_field() }}

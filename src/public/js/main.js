@@ -17,6 +17,7 @@
   const mode = location.pathname.slice(-1);;
   const music = mode === "1" ? new Audio('/image/bgm_easy.mp3') : new Audio('/image/bgm_hard.mp3');
   const target = document.getElementById('target');
+  const message = document.getElementById('message');
   const kana = document.getElementById('kana');
 
   document.addEventListener('click', () => {
@@ -28,6 +29,8 @@
     setWord();
     music.play();
     music.loop = true;
+
+    message.textContent = '※スマホ非対応';
   });
 
   document.addEventListener('keydown', e => {
@@ -38,6 +41,10 @@
     loc++;
 
     target.textContent = '_'.repeat(loc) + word.substring(loc);
+
+    if (loc !== 0) {
+      message.textContent = '';
+    }
 
     if (loc === word.length) {
       if (words.length === 0) {
