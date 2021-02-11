@@ -39,7 +39,17 @@ class ResultController extends Controller
             $standard_key_array[$key] = $value['time'];
         }
         array_multisort($standard_key_array, SORT_ASC, $result);
-        return view('result.show', compact('result'));
+
+        // 順位取得
+        session_start();
+        foreach ($result as $key => $value) {
+            if ($value['time'] == $_SESSION['time']) {
+                $number = $key + 1;
+            }
+        }
+        $_SESSION['isAgain'] = true;
+
+        return view('result.show', compact('result', 'number'));
     }
 
     /**
@@ -51,6 +61,12 @@ class ResultController extends Controller
      */
     public function edit (EditResultRequest $request, $id)
     {
+        // 記録の再登録防止
+        session_start();
+        if ($_SESSION['isAgain']) {
+            return redirect('/');
+        }
+
         // 現在のユーザーのデータ
         $data = $request->validated();
         $time = $data['time'];
@@ -58,6 +74,16 @@ class ResultController extends Controller
             'name' => 'あなた',
             'time' => $time,
         ];
+
+        // inputタグの値を書き換えられていないかチェック
+        // 暗号化ロジックが書かれてるので、githubリポジトリをprivateにするべき（今回のアプリでそこまでする必要はないが）
+        $time2 = $data['time2'];
+        if (($time + 37) * 791 !== floatval($time2)) {
+            return redirect('/');
+        }
+
+        $_SESSION['time'] = $time;
+        $_SESSION['isAgain'] = false;
 
         // DBに保存された過去のユーザーのデータ
         $result = [];
@@ -101,10 +127,19 @@ class ResultController extends Controller
      */
     public function update (UpdateResultRequest $request, $id)
     { 
+        // 記録の再登録防止
+        session_start();
+        if ($_SESSION['isAgain']) {
+            return redirect('/');
+        }
+
         $data = $request->validated();
         $result = new Result();
         $result->name = $data['name'];
-        $result->time = $data['time'];
+        
+        $result->time = $_SESSION['time'];
+        $_SESSION['isAgain'] = true;
+
         $result->type = $id;
         $result->save();
 

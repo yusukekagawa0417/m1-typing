@@ -18,16 +18,15 @@ class UpdateResultRequest extends FormRequest
 
     public function rules()
     {
+        // バリデーションで引っかかった際、routeが違うかなんかでエラーになる？？けどまあ、inputタグでバリデーションしてるのでOK
         return [
-            'name' => 'required|max:20',
-            'time' => 'required|different:あなた',
+            'name' => 'required',
         ];
     }
 
     public function attributes() {
         return [
             'name' => '名前',
-            'time' => '時間',
         ];
     }
 }

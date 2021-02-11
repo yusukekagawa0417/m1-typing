@@ -16,16 +16,19 @@ class EditResultRequest extends FormRequest
         return true;
     }
 
+    // バリデーションで引っかかった際、routeが違うかなんかでエラーになる？？けどまあ、inputタグでバリデーションしてるのでOK
     public function rules()
     {
         return [
             'time' => 'required',
+            'time2' => 'required',
         ];
     }
 
     public function attributes() {
         return [
             'time' => '時間',
+            'time2' => '時間2',
         ];
     }
 }

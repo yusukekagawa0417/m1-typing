@@ -7,7 +7,7 @@
         </div>
         <p id="kana"></p>
         <p id="target">
-            <span class="click">クリック！</span><br>
+            <span class="click" style="cursor: pointer">クリック！</span><br>
             <span class="text-small">※音が出ます</span>
         </p>
         <p id="message"></p>

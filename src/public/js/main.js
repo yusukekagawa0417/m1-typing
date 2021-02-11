@@ -20,7 +20,7 @@
   const message = document.getElementById('message');
   const kana = document.getElementById('kana');
 
-  document.addEventListener('click', () => {
+  document.getElementsByClassName('click')[0].addEventListener('click', () => {
     if (isPlaying === true) {
       return;
     }
@@ -57,6 +57,10 @@
         button.innerHTML = `<input id="time"
                                    name="time"
                                    value="${elapsedTime}"
+                                   type="hidden">
+                            <input id="time2"
+                                   name="time2"
+                                   value="${(Number(elapsedTime) + 37) * 791}"
                                    type="hidden">
                             <button type="submit" class="btn">順位は!?</button>`
         return;
