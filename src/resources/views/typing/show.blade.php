@@ -10,7 +10,15 @@
             <span class="click" style="cursor: pointer">クリック！</span><br>
             <span class="text-small">※音が出ます</span>
         </p>
-        <p id="message"></p>
+        <?php
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $isMobile = preg_match('/iphone|ipod|ipad|android/ui', $user_agent);
+        if ($isMobile) {
+        ?>
+        <p id="message" style="font-size: 1.1rem;"></p>
+        <?php
+        }
+        ?>
         <p id="result"></p>
         <form method="POST" action="{{ route('result.edit', ['result' => $id]) }}">
             {{ csrf_field() }}

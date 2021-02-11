@@ -30,7 +30,7 @@
     music.play();
     music.loop = true;
 
-    message.textContent = '※スマホ非対応';
+    message.textContent = '※パソコンで遊べます';
   });
 
   document.addEventListener('keydown', e => {
@@ -41,10 +41,6 @@
     loc++;
 
     target.textContent = '_'.repeat(loc) + word.substring(loc);
-
-    if (loc !== 0) {
-      message.textContent = '';
-    }
 
     if (loc === word.length) {
       if (words.length === 0) {
